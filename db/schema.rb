@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20141129090521) do
+ActiveRecord::Schema.define(version: 20141129101351) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -64,5 +64,17 @@ ActiveRecord::Schema.define(version: 20141129090521) do
   add_index "venues", ["rating"], name: "index_venues_on_rating", using: :btree
   add_index "venues", ["source_id"], name: "index_venues_on_source_id", using: :btree
   add_index "venues", ["tags"], name: "index_venues_on_tags", using: :gin
+
+  create_table "votes", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "photo_id"
+    t.boolean  "liked"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "votes", ["photo_id"], name: "index_votes_on_photo_id", using: :btree
+  add_index "votes", ["user_id", "photo_id"], name: "index_votes_on_user_id_and_photo_id", unique: true, using: :btree
+  add_index "votes", ["user_id"], name: "index_votes_on_user_id", using: :btree
 
 end

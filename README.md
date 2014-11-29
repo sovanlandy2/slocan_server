@@ -25,6 +25,7 @@
 ```javascript```
 [
     {
+        "id" : 1,
         "url": "https://irs3.4sqi.net/img/general/612x612/43801216_hbHvPu_A5QHVrsztbBLV4_MV-5ivVNfXiQRJuLjVVX8.jpg",
         "width": 612,
         "height": 612,
@@ -50,31 +51,7 @@
         }
     },
     {
-        "url": "https://irs1.4sqi.net/img/general/960x540/3954011_DAH8SaB87jh0xHtTADY5ScTqpZr8H7KeyJ2HyYHFypw.jpg",
-        "width": 960,
-        "height": 540,
-        "venue": {
-            "id": 57,
-            "address_blob": "185/187/189/191 Jln Besar,208879,Singapore",
-            "tags": [
-                "Dim Sum Restaurant",
-                "Dim Sum Restaurant",
-                "Dim Sum Restaurant"
-            ],
-            "name": "Swee Choon Tim Sum Restaurant 瑞春點心拉麵小籠包",
-            "rating": 8.5,
-            "tip": "Hong you chao shou is yummy!",
-            "avg_time_spent": null,
-            "best_time_for_visit": null,
-            "latitude": "1.307963806082410140874117132625542581",
-            "longigtude": "103.856881318372501254998496733605861664",
-            "created_at": "2014-11-29T17:01:49.786+08:00",
-            "updated_at": "2014-11-29T17:26:44.329+08:00",
-            "source": "foursquare",
-            "source_id": "4bb610c81344b71318e99c04"
-        }
-    },
-    {
+        "id" : 2,
         "url": "https://irs2.4sqi.net/img/general/720x960/54975491_IsN_24PvR1jMUeNwKf-gJwrO_JtIxmfL0dppy7oox3w.jpg",
         "width": 720,
         "height": 960,
@@ -98,56 +75,24 @@
             "source": "foursquare",
             "source_id": "4c160cf377cea5934602d360"
         }
-    },
-    {
-        "url": "https://irs3.4sqi.net/img/general/720x441/bMPjwz4p81LtEYiQ-r0_VEBPJ2Tf40QI2zJns8brsUY.jpg",
-        "width": 720,
-        "height": 441,
-        "venue": {
-            "id": 59,
-            "address_blob": "200 Victoria St.,188021,Singapore",
-            "tags": [
-                "Mall",
-                "Mall",
-                "Mall"
-            ],
-            "name": "Bugis Junction",
-            "rating": 8.3,
-            "tip": "The water fountain here never fails to put on a good show for the kids and young adults",
-            "avg_time_spent": null,
-            "best_time_for_visit": null,
-            "latitude": "1.299129258067496239803517710242886096",
-            "longigtude": "103.855390548706054688",
-            "created_at": "2014-11-29T17:01:49.880+08:00",
-            "updated_at": "2014-11-29T17:26:44.350+08:00",
-            "source": "foursquare",
-            "source_id": "4bb9c1a6935e9521d3512790"
-        }
-    },
-    {
-        "url": "https://irs1.4sqi.net/img/general/2592x1728/55615029_R4f4SVsokakZ80yyPDqh-59HsMJ_wKQI5FdVcWkpfXQ.jpg",
-        "width": 2592,
-        "height": 1728,
-        "venue": {
-            "id": 60,
-            "address_blob": "#01-19/20 Robertson Walk (11 Unity St),237995,Singapore",
-            "tags": [
-                "Wine Bar",
-                "Wine Bar",
-                "Wine Bar"
-            ],
-            "name": "Wine Connection Tapas Bar & Bistro",
-            "rating": 8.9,
-            "tip": "Order their (soft) cheese platter. Camembert cheese preferred. Consume and combine with grape, almond and raisin. Take a sip of the wine. The after taste is excellent!",
-            "avg_time_spent": null,
-            "best_time_for_visit": null,
-            "latitude": "1.292157297599210163951966023887507617",
-            "longigtude": "103.841507434844970703",
-            "created_at": "2014-11-29T17:01:49.932+08:00",
-            "updated_at": "2014-11-29T17:26:44.364+08:00",
-            "source": "foursquare",
-            "source_id": "4b0e51a0f964a520c35623e3"
-        }
     }
 ]
+```
+
+## Vote ##
+
+* URL: `api/v1/votes`
+* method: POST
+* params : `user_id*`,`photo_id*`
+* response
+
+```javascript```
+{
+    "id": 5,
+    "user_id": 1,
+    "photo_id": 6,
+    "liked": true,
+    "created_at": "2014-11-29T18:26:47.625+08:00",
+    "updated_at": "2014-11-29T18:26:47.625+08:00"
+}
 ```
