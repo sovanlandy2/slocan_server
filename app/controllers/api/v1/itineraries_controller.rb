@@ -16,4 +16,12 @@ class Api::V1::ItinerariesController < Api::ApiController
       render json: itinerary
     end
   end
+
+  def destroy
+    raise_errors_if_empty_params :id, :user_id
+    user = get_api_entity User.find_by(id: params[:user_id]), User
+    itin = get_api_entity user.itineraries.find_by(id: params[:id]),  Itinerary
+    itin.destroy 
+    render json: itin
+  end
 end

@@ -776,3 +776,10 @@
 ]
 
 ```
+
+## Delete Itinerary ##
+
+* URL: "/api/v1/itineraries/:id"
+* params: `user_id*`
+* method: `delete`
+* response: Same as one itinerary
