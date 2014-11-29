@@ -16,18 +16,7 @@
     "device_id": "adbfbasd"
 }
 ```
-
-Duplication
-
-```javascript```
-{
-    "status_code": 4003,
-    "error": {
-        "message": "Entity Duplication detected"
-    },
-    "accessing_time": 1417254333
-}
-```
+- if duplicate device_id sent it will return the first created and will not throw any error
 
 ## Photo ##
 * url: `/api/v1/photos`
