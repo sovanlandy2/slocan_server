@@ -38,6 +38,7 @@ gem 'rails-html-sanitizer', '~> 1.0'
 # assets
 #gem 'rails-assets-bootstrap'
 gem 'best_in_place'
+gem 'thin'
 
 # Use Unicorn as the app server
 # gem 'unicorn'
