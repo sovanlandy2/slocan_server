@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  address: MyText
+  tags: MyString
+  name: MyString
+  rating: 1.5
+  tip: MyText
+  avg_time_spent: 1
+  best_time_for_visit: MyString
+  latitude: 
+  longigtude: 
+
+two:
+  address: MyText
+  tags: MyString
+  name: MyString
+  rating: 1.5
+  tip: MyText
+  avg_time_spent: 1
+  best_time_for_visit: MyString
+  latitude: 
+  longigtude: 
