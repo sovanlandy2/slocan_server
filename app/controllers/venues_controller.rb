@@ -1,7 +1,7 @@
 class VenuesController < ApplicationController 
   respond_to :html, :json
   def index
-    @venues = Venue.page(page_param)
+    @venues = Venue.order("rating desc").page(page_param)
   end
 
   def create
