@@ -17,6 +17,18 @@
 }
 ```
 
+Duplication
+
+```javascript```
+{
+    "status_code": 4003,
+    "error": {
+        "message": "Entity Duplication detected"
+    },
+    "accessing_time": 1417254333
+}
+```
+
 ## Photo ##
 * url: `/api/v1/photos`
 * params: `user_id*` `page`
