@@ -83,7 +83,7 @@
 
 * URL: `api/v1/votes`
 * method: POST
-* params : `user_id*`,`photo_id*`
+* params : `user_id*`,`photo_id*`, `liked*` can be "true" or "false"
 * response
 
 ```javascript```
@@ -95,4 +95,6 @@
     "created_at": "2014-11-29T18:26:47.625+08:00",
     "updated_at": "2014-11-29T18:26:47.625+08:00"
 }
+
+
 ```
