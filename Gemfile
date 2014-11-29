@@ -35,7 +35,7 @@ gem 'haml-rails'
 # Use Rails Html Sanitizer for HTML sanitization
 gem 'rails-html-sanitizer', '~> 1.0'
 # assets
-gem 'rails-assets-bootstrap'
+#gem 'rails-assets-bootstrap'
 gem 'best_in_place'
 
 # Use Unicorn as the app server
