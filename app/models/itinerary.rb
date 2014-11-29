@@ -7,8 +7,8 @@ class Itinerary < ActiveRecord::Base
   def self.get_data(duration, user_id)
     data = 
       '
-        {
-              "day1": {
+        [
+              {"day1": {
                   "morning": {
                       "venues": [
                           {
@@ -94,7 +94,8 @@ class Itinerary < ActiveRecord::Base
                       ]
                   }
               }
-          }
+            }
+          ]
       '
       return JSON.parse(data)
   end
