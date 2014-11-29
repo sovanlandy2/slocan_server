@@ -98,6 +98,14 @@ class Itinerary < ActiveRecord::Base
       end
       
       self.data = data 
+
+      if !self.name.present?
+        if duration == 1
+          self.name = "Singapore #{duration} day stay #{Time.now.to_i}"
+        else
+          self.name = "Singapore #{duration} days stay #{Time.now.to_i}"
+        end
+      end
     end
 
 end

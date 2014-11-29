@@ -8,7 +8,7 @@ class Api::V1::ItinerariesController < Api::ApiController
 
   def query
     raise_errors_if_empty_params :duration, :user_id
-    permit = params.permit(:duration, :user_id, :data)
+    permit = params.permit(:duration, :user_id, :data, :name)
     itinerary = Itinerary.create(permit)
     if itinerary.errors.present?
       render_errors 2002, itinerary.full_error_messages
