@@ -1,5 +1,5 @@
 # Slocan's Server URL #
-* base_url: ``
+* base_url: `http://slocan.herokuapp.com/`
 
 ## User ##
 
