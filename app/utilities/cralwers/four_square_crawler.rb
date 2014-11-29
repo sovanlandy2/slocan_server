@@ -8,7 +8,16 @@ class Cralwers::FourSquareCrawler
 
   def initialize()
     #@client = Foursquare2::Client.new(:client_id => 'your_client_id', :client_secret => 'your_secret')
-    @data = JSON.parse( RestClient.get("https://api.foursquare.com/v2/venues/explore?near=Singapore&section=arts,outdoors,sights,trending,specials,topPicks&venuePhotos=1&client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20140806")) 
+    limit=50
+    offset=30
+    while(offset<200)
+      url = "https://api.foursquare.com/v2/venues/explore?near=Singapore&section=arts,outdoors,sights,trending,specials,topPicks&venuePhotos=1&client_id=#{CLIENT_ID}&client_secret=#{CLIENT_SECRET}&v=20140806"
+      url+="&limit=#{limit}"
+      url+="&offset=#{offset}"
+      @data = JSON.parse( RestClient.get(url)) 
+      self.perform
+      offset+=50
+    end
   end
 
   def perform
@@ -19,6 +28,8 @@ class Cralwers::FourSquareCrawler
       if !venue.present?
         venue = Venue.new
         venue.name = place["name"]
+      else
+        next
       end
       #rating
       venue.rating = place["rating"]
@@ -40,6 +51,10 @@ class Cralwers::FourSquareCrawler
       venue.source_id = place["id"]
       if venue.save 
         p =  place["featuredPhotos"]
+        if !p.present?
+          venue.destroy
+          next
+        end
         p["items"].each do |photo|
           old_photo = Photo.find_by(source_id: photo["id"])
           if !old_photo.present?
