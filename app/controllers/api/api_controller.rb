@@ -14,12 +14,4 @@ class Api::ApiController < ApplicationController
     {root: false}
   end
   
-  private
-  def page_param
-    params[:page].present?? params[:page].to_i : 1
-  end
-
-  def per_page_param
-    DEFAULT_PER_PAGE
-  end
 end
