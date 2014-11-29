@@ -1,0 +1,19 @@
+= link_to "Back", "/venues"
+%table.table-striped{style: "padding: 10px; margin: 10px;"}
+  %tr
+    %th 
+      %b Field
+    %th 
+      %b Value
+  %tr
+    %td 
+      %b Name
+    %td= best_in_place @venue, :name
+  %tr
+    %td 
+      %b Average Time Spent
+    %td= best_in_place @venue, :avg_time_spent
+  %tr
+    %td 
+      %b Best Time for visiting
+    %td= best_in_place @venue, :best_time_for_visit,type: :select, collection: ["morning","afternoon","evening"]

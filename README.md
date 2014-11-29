@@ -98,3 +98,202 @@
 
 
 ```
+
+## Query for Itineraries ##
+* URL: `api/v1/itineraries`
+* method: GET
+* params : `user_id*`,`duration*`
+* response
+
+```javascript```
+    {
+        "day1": {
+            "morning": {
+                "venues": [
+                    {
+                        "id": 58,
+                        "address_blob": "#04-02/03/04MandarinGallery(333AOrchardRd),238867,Singapore",
+                        "tags": [
+                            "Ramen/NoodleHouse"
+                        ],
+                        "name": "Ippudo(一風堂)",
+                        "rating": 8.9,
+                        "tip": "Thecurrytofuisamusttry!Theporkbunsandthenoodlesalsoamustmusttry.Niceambienceandgoodservicefromstaff!",
+                        "avg_time_spent": 3,
+                        "best_time_for_visit": "morning",
+                        "latitude": "1.302282723104893902288381468679290265",
+                        "longigtude": "103.836851119995117188",
+                        "created_at": "2014-11-29T17: 01: 49.832+08: 00",
+                        "updated_at": "2014-11-29T17: 26: 44.339+08: 00",
+                        "source": "foursquare",
+                        "source_id": "4c160cf377cea5934602d360",
+                        "photo": {
+                            "id": 2,
+                            "url": "https: //irs2.4sqi.net/img/general/720x960/54975491_IsN_24PvR1jMUeNwKf-gJwrO_JtIxmfL0dppy7oox3w.jpg",
+                            "width": 720,
+                            "height": 960
+                        }
+                    }
+                ]
+            },
+            "afternoon": {
+                "venues": [
+                    {
+                        "id": 58,
+                        "address_blob": "#04-02/03/04MandarinGallery(333AOrchardRd),238867,Singapore",
+                        "tags": [
+                            "Ramen/NoodleHouse"
+                        ],
+                        "name": "Ippudo(一風堂)",
+                        "rating": 8.9,
+                        "tip": "Thecurrytofuisamusttry!Theporkbunsandthenoodlesalsoamustmusttry.Niceambienceandgoodservicefromstaff!",
+                        "avg_time_spent": 3,
+                        "best_time_for_visit": "morning",
+                        "latitude": "1.302282723104893902288381468679290265",
+                        "longigtude": "103.836851119995117188",
+                        "created_at": "2014-11-29T17: 01: 49.832+08: 00",
+                        "updated_at": "2014-11-29T17: 26: 44.339+08: 00",
+                        "source": "foursquare",
+                        "source_id": "4c160cf377cea5934602d360",
+                        "photo": {
+                            "id": 2,
+                            "url": "https: //irs2.4sqi.net/img/general/720x960/54975491_IsN_24PvR1jMUeNwKf-gJwrO_JtIxmfL0dppy7oox3w.jpg",
+                            "width": 720,
+                            "height": 960
+                        }
+                    }
+                ]
+            },
+            "evening": {
+                "venues": [
+                    {
+                        "id": 58,
+                        "address_blob": "#04-02/03/04MandarinGallery(333AOrchardRd),238867,Singapore",
+                        "tags": [
+                            "Ramen/NoodleHouse"
+                        ],
+                        "name": "Ippudo(一風堂)",
+                        "rating": 8.9,
+                        "tip": "Thecurrytofuisamusttry!Theporkbunsandthenoodlesalsoamustmusttry.Niceambienceandgoodservicefromstaff!",
+                        "avg_time_spent": 3,
+                        "best_time_for_visit": "morning",
+                        "latitude": "1.302282723104893902288381468679290265",
+                        "longigtude": "103.836851119995117188",
+                        "created_at": "2014-11-29T17: 01: 49.832+08: 00",
+                        "updated_at": "2014-11-29T17: 26: 44.339+08: 00",
+                        "source": "foursquare",
+                        "source_id": "4c160cf377cea5934602d360",
+                        "photo": {
+                            "id": 2,
+                            "url": "https: //irs2.4sqi.net/img/general/720x960/54975491_IsN_24PvR1jMUeNwKf-gJwrO_JtIxmfL0dppy7oox3w.jpg",
+                            "width": 720,
+                            "height": 960
+                        }
+                    }
+                ]
+            }
+        }
+    }
+
+```
+
+## Get Existed Itineraries ##
+
+* URL: `api/v1/itineraries`
+* method: GET
+* params : `user_id*`
+* response
+
+```javascript```
+[
+    {
+        "day1": {
+            "morning": {
+                "venues": [
+                    {
+                        "id": 58,
+                        "address_blob": "#04-02/03/04MandarinGallery(333AOrchardRd),238867,Singapore",
+                        "tags": [
+                            "Ramen/NoodleHouse"
+                        ],
+                        "name": "Ippudo(一風堂)",
+                        "rating": 8.9,
+                        "tip": "Thecurrytofuisamusttry!Theporkbunsandthenoodlesalsoamustmusttry.Niceambienceandgoodservicefromstaff!",
+                        "avg_time_spent": 3,
+                        "best_time_for_visit": "morning",
+                        "latitude": "1.302282723104893902288381468679290265",
+                        "longigtude": "103.836851119995117188",
+                        "created_at": "2014-11-29T17: 01: 49.832+08: 00",
+                        "updated_at": "2014-11-29T17: 26: 44.339+08: 00",
+                        "source": "foursquare",
+                        "source_id": "4c160cf377cea5934602d360",
+                        "photo": {
+                            "id": 2,
+                            "url": "https: //irs2.4sqi.net/img/general/720x960/54975491_IsN_24PvR1jMUeNwKf-gJwrO_JtIxmfL0dppy7oox3w.jpg",
+                            "width": 720,
+                            "height": 960
+                        }
+                    }
+                ]
+            },
+            "afternoon": {
+                "venues": [
+                    {
+                        "id": 58,
+                        "address_blob": "#04-02/03/04MandarinGallery(333AOrchardRd),238867,Singapore",
+                        "tags": [
+                            "Ramen/NoodleHouse"
+                        ],
+                        "name": "Ippudo(一風堂)",
+                        "rating": 8.9,
+                        "tip": "Thecurrytofuisamusttry!Theporkbunsandthenoodlesalsoamustmusttry.Niceambienceandgoodservicefromstaff!",
+                        "avg_time_spent": 3,
+                        "best_time_for_visit": "morning",
+                        "latitude": "1.302282723104893902288381468679290265",
+                        "longigtude": "103.836851119995117188",
+                        "created_at": "2014-11-29T17: 01: 49.832+08: 00",
+                        "updated_at": "2014-11-29T17: 26: 44.339+08: 00",
+                        "source": "foursquare",
+                        "source_id": "4c160cf377cea5934602d360",
+                        "photo": {
+                            "id": 2,
+                            "url": "https: //irs2.4sqi.net/img/general/720x960/54975491_IsN_24PvR1jMUeNwKf-gJwrO_JtIxmfL0dppy7oox3w.jpg",
+                            "width": 720,
+                            "height": 960
+                        }
+                    }
+                ]
+            },
+            "evening": {
+                "venues": [
+                    {
+                        "id": 58,
+                        "address_blob": "#04-02/03/04MandarinGallery(333AOrchardRd),238867,Singapore",
+                        "tags": [
+                            "Ramen/NoodleHouse"
+                        ],
+                        "name": "Ippudo(一風堂)",
+                        "rating": 8.9,
+                        "tip": "Thecurrytofuisamusttry!Theporkbunsandthenoodlesalsoamustmusttry.Niceambienceandgoodservicefromstaff!",
+                        "avg_time_spent": 3,
+                        "best_time_for_visit": "morning",
+                        "latitude": "1.302282723104893902288381468679290265",
+                        "longigtude": "103.836851119995117188",
+                        "created_at": "2014-11-29T17: 01: 49.832+08: 00",
+                        "updated_at": "2014-11-29T17: 26: 44.339+08: 00",
+                        "source": "foursquare",
+                        "source_id": "4c160cf377cea5934602d360",
+                        "photo": {
+                            "id": 2,
+                            "url": "https: //irs2.4sqi.net/img/general/720x960/54975491_IsN_24PvR1jMUeNwKf-gJwrO_JtIxmfL0dppy7oox3w.jpg",
+                            "width": 720,
+                            "height": 960
+                        }
+                    }
+                ]
+            }
+        }
+    }
+]
+
+```

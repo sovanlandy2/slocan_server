@@ -5,6 +5,11 @@ Rails.application.routes.draw do
       resources :users    
       resources :photos
       resources :votes 
+      resources :itineraries do 
+        collection do 
+          get :query
+        end
+      end
     end
   end
 

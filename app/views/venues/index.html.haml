@@ -1,0 +1,19 @@
+%h1 Venues
+%h5 Edit on the go!
+%table.table-striped
+  %tr
+    %th 
+    %th Name
+    %th Best Visit Time
+    %th Average Spent Time
+    %th Categories
+  - @venues.each do |venue|
+    %tr
+      %td
+        = image_tag venue.photos.first.url, size: "60x60", class: "thumbnail"
+      %td=best_in_place venue, :name
+      %td= best_in_place venue, :best_time_for_visit,type: :select, collection: Venue.best_time_for_visits.map{|k,v| k}
+      %td=best_in_place venue, :avg_time_spent
+      %td=venue.tags.join(", ")
+      
+= paginate @venues

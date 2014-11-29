@@ -10,11 +10,4 @@ class Api::V1::VotesController < Api::ApiController
     render json: vote
   end
 
-  def show
-    
-  end
-
-  def edit
-    
-  end
 end
