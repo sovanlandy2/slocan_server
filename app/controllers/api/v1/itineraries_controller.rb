@@ -3,12 +3,17 @@ class Api::V1::ItinerariesController < Api::ApiController
     raise_errors_if_empty_params :user_id
     user = User.find(params[:user_id])
     itineraries = user.itineraries.order("created_at desc")
-    render json: [Itinerary::get_data(params[:duration], params[:user_id])]
+    render json: itineraries
   end
 
   def query
     raise_errors_if_empty_params :duration, :user_id
-    itineraries = Itinerary::get_data(params[:duration], params[:user_id])
-    render json: itineraries
+    permit = params.permit(:duration, :user_id, :data)
+    itinerary = Itinerary.create(permit)
+    if itinerary.errors.present?
+      render_errors 2002, itinerary.full_error_messages
+    else 
+      render json: itinerary
+    end
   end
 end
