@@ -30,10 +30,11 @@ class Itinerary < ActiveRecord::Base
 
       duration.times do |i|
         if whole_day_venue.present?
+
           data[i] = {
             "whole_day" => {
               "venues" => [
-                whole_day_venue
+                whole_day_venue.attributes.merge({"photo" => whole_day_venue.photos.first})
               ]
             }
           }
@@ -49,7 +50,7 @@ class Itinerary < ActiveRecord::Base
           while morning_duration > 0 && morning_venues.present? && !reach_end 
             morning_venues.each do |venue|
               if (venue.avg_time_spent < morning_duration)
-               data[i]["morning"]["venues"] << venue 
+               data[i]["morning"]["venues"] << venue.attributes.merge({"photo" => venue.photos.first})
                morning_venues = morning_venues - [venue]
                morning_duration -= venue.avg_time_spent
                break
@@ -66,7 +67,7 @@ class Itinerary < ActiveRecord::Base
           while afternoon_duration > 0 && afternoon_venues.present? && !reach_end 
             afternoon_venues.each do |venue|
               if (venue.avg_time_spent < afternoon_duration)
-               data[i]["afternoon"]["venues"] << venue 
+               data[i]["afternoon"]["venues"] << venue.attributes.merge({"photo" => venue.photos.first})
                afternoon_venues = afternoon_venues - [venue]
                afternoon_duration -= venue.avg_time_spent
                break
@@ -83,7 +84,7 @@ class Itinerary < ActiveRecord::Base
           while evening_duration > 0 && evening_venues.present? && !reach_end
             evening_venues.each do |venue|
               if (venue.avg_time_spent < evening_duration)
-               data[i]["evening"]["venues"] << venue 
+               data[i]["evening"]["venues"] << venue.attributes.merge({"photo" => venue.photos.first})
                evening_venues = evening_venues - [venue]
                evening_duration -= venue.avg_time_spent
                break
