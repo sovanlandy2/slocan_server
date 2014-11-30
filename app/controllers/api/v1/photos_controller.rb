@@ -6,4 +6,5 @@ class Api::V1::PhotosController < Api::ApiController
     photos = Photo.where("photos.id NOT in (?)", voted_ids).includes(:venue).limit(20).shuffle
     render json: photos
   end
+
 end
